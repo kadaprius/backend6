@@ -62,6 +62,11 @@ public class CustomerController {
         GeneralUtil.checkRequiredProperties(rd.getData(), Arrays.asList("active", "searchText"));
         return customerService.search(rd.getData(), rd.getPaging());
     }
+    @RequestMapping(value = "/search2", method = RequestMethod.POST, produces = {"application/json"})
+    public Page<CustomerInfoWithCityCountry> search2(@RequestBody RequestData<SearchCustomer> rd) throws Exception {
+        GeneralUtil.checkRequiredProperties(rd.getData(), Arrays.asList("active", "searchText"));
+        return customerService.search2(rd.getData(), rd.getPaging());
+    }
 
     //@PreAuthorize("hasAuthority('customer:add')")
     @RequestMapping(value = "/{id}/status", method = RequestMethod.PUT, produces = {"application/json"})

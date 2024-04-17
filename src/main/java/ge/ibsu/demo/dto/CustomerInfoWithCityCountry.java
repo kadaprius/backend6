@@ -1,6 +1,6 @@
 package ge.ibsu.demo.dto;
 
-public class CustomerAddressInfo {
+public class CustomerInfoWithCityCountry {
 
     private String firstName;
     private String LastName;
@@ -10,9 +10,9 @@ public class CustomerAddressInfo {
 
     private String Address;
 
-    public CustomerAddressInfo(){}
+    public CustomerInfoWithCityCountry(){}
 
-    public CustomerAddressInfo(String firstName, String lastName, String city, String country, String address) {
+    public CustomerInfoWithCityCountry(String firstName, String lastName, String city, String country, String address) {
         this.firstName = firstName;
         LastName = lastName;
         City = city;

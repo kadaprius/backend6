@@ -70,6 +70,11 @@ public class CustomerService {
         Pageable pageable = PageRequest.of(paging.getPage() - 1, paging.getSize(), Sort.by("id").descending());
         return customerRepository.searchInfo(searchCustomer.getActive(), searchText, pageable);
     }
+    public Page<CustomerInfoWithCityCountry> search2(SearchCustomer searchCustomer, Paging paging) {
+        String searchText = searchCustomer.getSearchText() != null ? "%" + searchCustomer.getSearchText() + "%" : "";
+        Pageable pageable = PageRequest.of(paging.getPage() - 1, paging.getSize(), Sort.by("id").descending());
+        return customerRepository.searchInfo2(searchCustomer.getActive(), searchText, pageable);
+    }
 
     @Transactional
     public void setActiveStatusToCustomer(Long id, Integer status) {
